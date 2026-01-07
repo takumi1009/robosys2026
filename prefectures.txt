@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Komiya Takumi
+# SPDX-License-Identifier: BSD-3-Clause
+
 北海道 北海道 札幌市
 青森県 東北 青森市
 岩手県 東北 盛岡市
