@@ -2,10 +2,7 @@
 # SPDX-FileCopyrightText: 2026 Komiya Takumi
 # SPDX-License-Identifier: BSD-3-Clause
 
-
 set -e
-
-chmod +x ./prefecuture_checker
 
 echo "千葉県" | ../prefecture_checker > out1.txt
 grep -q "関東 千葉市" out1.txt
