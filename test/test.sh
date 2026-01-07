@@ -5,8 +5,8 @@
 
 set -e
 
-echo "千葉県" | ../pref2region > out1.txt
+echo "千葉県" | ../prefecture_checker > out1.txt
 grep -q "関東 千葉市" out1.txt
 
-echo "大阪府" | ../pref2region > out2.txt
+echo "大阪府" | ../prefecture_checker > out2.txt
 grep -q "近畿 大阪市" out2.txt
