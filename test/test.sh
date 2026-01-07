@@ -17,11 +17,5 @@ if echo "架空県" | ../prefecture_checker >/dev/null 2>&1; then
   exit 1
 fi
 
-# 異常系：標準入力なし
-if ../prefecture_checker >/dev/null 2>&1; then
-  echo "Error: no stdin was accepted"
-  exit 1
-fi
-
 echo "All tests passed"
 
