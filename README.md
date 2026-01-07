@@ -63,4 +63,5 @@ Unknown prefecture: 架空県
 ## ライセンス
 - このソフトウェアはBSD-3-Clauseライセンスの下で公開されます。
 - 外部ライブラリ依存なし（標準ライブラリのみ）
-- © 2026 Komiya Takumi
+
+© 2026 Komiya Takumi
