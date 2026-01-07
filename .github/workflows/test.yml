@@ -5,11 +5,25 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Show Python version
+        run: python --version
 
       - name: Make scripts executable
         run: chmod +x prefecture_checker test/test.sh
 
       - name: Run tests
         run: cd test && ./test.sh
+
