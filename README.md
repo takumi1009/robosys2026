@@ -46,14 +46,12 @@ $ echo 架空県 | ./prefecture_checker
 Unknown prefecture: 架空県
 ```
 
-異なる地域（関東・近畿）のケースを確認
-
 ## 必要なソフトウェア
 - Python
 テスト済みバージョン: 3.8〜3.13
 - Ubuntu 24.04 LTS
 
 ## ライセンス
-このソフトウェアはBSD-3-Clauseライセンスの下で公開されます。
-外部ライブラリ依存なし（標準ライブラリのみ）
-© 2026 Komiya Takumi
+- このソフトウェアはBSD-3-Clauseライセンスの下で公開されます。
+- 外部ライブラリ依存なし（標準ライブラリのみ）
+- © 2026 Komiya Takumi
