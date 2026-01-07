@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Make scripts executable
-        run: chmod +x pref2region test/test.sh
+        run: chmod +x prefecture_checker test/test.sh
 
       - name: Run tests
         run: cd test && ./test.sh
