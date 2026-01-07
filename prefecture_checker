@@ -74,7 +74,7 @@ BEGIN {
 }
 {
   if ($1 in region) {
-    print region[$1], capital[$1]
+    print region[$1]地方, capital[$1]
   } else {
     print "Unknown prefecture:", $1 > "/dev/stderr"
     exit 1
