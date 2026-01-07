@@ -5,6 +5,8 @@
 
 set -e
 
+chmod +x ./prefecuture_checker
+
 echo "千葉県" | ../prefecture_checker > out1.txt
 grep -q "関東 千葉市" out1.txt
 
