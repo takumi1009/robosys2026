@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 if [ -t 0 ]; then
-  echo "Usage: echo 都道府県名 | pref2region" >&2
+  echo "Usage: echo 都道府県名 | prefecture_checker" >&2
   exit 1
 fi
 
