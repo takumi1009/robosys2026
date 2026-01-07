@@ -23,19 +23,19 @@
 
 ### 基本的な使い方
 
-'''bash
-$echo 千葉県 | ./prefecture_checker
-関東 千葉市
-'''
+```bash
+- $echo 千葉県 | ./prefecture_checker
+- 関東 千葉市
+```
 
 エラー例
 
 存在しない都道府県名を入力した場合：
 
-'''bash
-$echo 架空県 | ./prefecture_checker
-Unknown prefecture: 架空県
-'''
+```bash
+- $echo 架空県 | ./prefecture_checker
+- Unknown prefecture: 架空県
+```
 
 異なる地域（関東・近畿）のケースを確認
 
