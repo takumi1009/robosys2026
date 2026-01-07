@@ -24,6 +24,10 @@
 $ git clone https://github.com/takumi1009/robosys2026
 $ cd robosys2026
 ```
+実行権限を付与
+```bash
+$ chmod +x prefecture_checker 
+
 ## 実行方法
 ```bash
 $ echo 都道府県名　| ./prefecture_checker
