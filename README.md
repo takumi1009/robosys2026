@@ -27,6 +27,7 @@ $ cd robosys2026
 実行権限を付与
 ```bash
 $ chmod +x prefecture_checker 
+```
 
 ## 実行方法
 ```bash
@@ -50,10 +51,14 @@ $ echo 架空県 | ./prefecture_checker
 Unknown prefecture: 架空県
 ```
 
+---
+
 ## 必要なソフトウェア
 - Python
   - テスト済みバージョン: 3.8〜3.13
 - Ubuntu 24.04 LTS
+
+---
 
 ## ライセンス
 - このソフトウェアはBSD-3-Clauseライセンスの下で公開されます。
