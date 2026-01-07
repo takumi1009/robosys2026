@@ -31,7 +31,7 @@ $ chmod +x prefecture_checker
 
 ## 実行方法
 ```bash
-$ echo 都道府県名　| ./prefecture_checker
+$ echo 都道府県名| ./prefecture_checker
 地域　県庁所在地
 ```
 
