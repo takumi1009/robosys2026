@@ -1,5 +1,6 @@
 # ロボットシステム学課題3
 # prefecture_checker
+![test](https://github.com/takumi1009/robosys2026/actions/workflows/test.yml/badge.svg)
 
 日本の都道府県名を標準入力で受け取り,
 その都道府県が属する **地域** と **県庁所在地** を標準出力に表示するコマンドです。
@@ -26,9 +27,10 @@ $ cd robosys2026
 ## 実行方法
 ```bash
 $ echo 都道府県名　| ./prefecture_checker
+地域　県庁所在地
 ```
 
-### 基本的な使い方
+### 実行例
 
 ```bash
 $ echo 千葉県 | ./prefecture_checker
@@ -49,9 +51,7 @@ Unknown prefecture: 架空県
 ##必要なソフトウェア
 - Python
 - テスト済みバージョン: 3.8〜3.13
-
-##テスト環境
-Ubuntu 24.04 LTS
+- Ubuntu 24.04 LTS
 
 ##ライセンス
 このソフトウェアはBSD-3-Clauseライセンスの下で公開されます。
