@@ -25,5 +25,5 @@ jobs:
         run: chmod +x prefecture_checker test/test.sh
 
       - name: Run tests
-        run: cd test && ./test.sh
+        run: ./test.sh
 
