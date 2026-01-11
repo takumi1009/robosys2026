@@ -7,78 +7,66 @@ if [ -t 0 ]; then
   exit 1
 fi
 
-awk '
-BEGIN {
-  # 北海道
-  region["北海道"]="北海道"; capital["北海道"]="札幌市"
+read pref
 
-  # 東北
-  region["青森県"]="東北"; capital["青森県"]="青森市"
-  region["岩手県"]="東北"; capital["岩手県"]="盛岡市"
-  region["宮城県"]="東北"; capital["宮城県"]="仙台市"
-  region["秋田県"]="東北"; capital["秋田県"]="秋田市"
-  region["山形県"]="東北"; capital["山形県"]="山形市"
-  region["福島県"]="東北"; capital["福島県"]="福島市"
+case "$pref" in
+  北海道) echo "北海道 札幌市" ;;
 
-  # 関東
-  region["茨城県"]="関東"; capital["茨城県"]="水戸市"
-  region["栃木県"]="関東"; capital["栃木県"]="宇都宮市"
-  region["群馬県"]="関東"; capital["群馬県"]="前橋市"
-  region["埼玉県"]="関東"; capital["埼玉県"]="さいたま市"
-  region["千葉県"]="関東"; capital["千葉県"]="千葉市"
-  region["東京都"]="関東"; capital["東京都"]="新宿区"
-  region["神奈川県"]="関東"; capital["神奈川県"]="横浜市"
+  青森県) echo "東北 青森市" ;;
+  岩手県) echo "東北 盛岡市" ;;
+  宮城県) echo "東北 仙台市" ;;
+  秋田県) echo "東北 秋田市" ;;
+  山形県) echo "東北 山形市" ;;
+  福島県) echo "東北 福島市" ;;
 
-  # 中部
-  region["新潟県"]="中部"; capital["新潟県"]="新潟市"
-  region["富山県"]="中部"; capital["富山県"]="富山市"
-  region["石川県"]="中部"; capital["石川県"]="金沢市"
-  region["福井県"]="中部"; capital["福井県"]="福井市"
-  region["山梨県"]="中部"; capital["山梨県"]="甲府市"
-  region["長野県"]="中部"; capital["長野県"]="長野市"
-  region["岐阜県"]="中部"; capital["岐阜県"]="岐阜市"
-  region["静岡県"]="中部"; capital["静岡県"]="静岡市"
-  region["愛知県"]="中部"; capital["愛知県"]="名古屋市"
+  茨城県) echo "関東 水戸市" ;;
+  栃木県) echo "関東 宇都宮市" ;;
+  群馬県) echo "関東 前橋市" ;;
+  埼玉県) echo "関東 さいたま市" ;;
+  千葉県) echo "関東 千葉市" ;;
+  東京都) echo "関東 新宿区" ;;
+  神奈川県) echo "関東 横浜市" ;;
 
-  # 近畿
-  region["三重県"]="近畿"; capital["三重県"]="津市"
-  region["滋賀県"]="近畿"; capital["滋賀県"]="大津市"
-  region["京都府"]="近畿"; capital["京都府"]="京都市"
-  region["大阪府"]="近畿"; capital["大阪府"]="大阪市"
-  region["兵庫県"]="近畿"; capital["兵庫県"]="神戸市"
-  region["奈良県"]="近畿"; capital["奈良県"]="奈良市"
-  region["和歌山県"]="近畿"; capital["和歌山県"]="和歌山市"
+  新潟県) echo "中部 新潟市" ;;
+  富山県) echo "中部 富山市" ;;
+  石川県) echo "中部 金沢市" ;;
+  福井県) echo "中部 福井市" ;;
+  山梨県) echo "中部 甲府市" ;;
+  長野県) echo "中部 長野市" ;;
+  岐阜県) echo "中部 岐阜市" ;;
+  静岡県) echo "中部 静岡市" ;;
+  愛知県) echo "中部 名古屋市" ;;
 
-  # 中国
-  region["鳥取県"]="中国"; capital["鳥取県"]="鳥取市"
-  region["島根県"]="中国"; capital["島根県"]="松江市"
-  region["岡山県"]="中国"; capital["岡山県"]="岡山市"
-  region["広島県"]="中国"; capital["広島県"]="広島市"
-  region["山口県"]="中国"; capital["山口県"]="山口市"
+  三重県) echo "近畿 津市" ;;
+  滋賀県) echo "近畿 大津市" ;;
+  京都府) echo "近畿 京都市" ;;
+  大阪府) echo "近畿 大阪市" ;;
+  兵庫県) echo "近畿 神戸市" ;;
+  奈良県) echo "近畿 奈良市" ;;
+  和歌山県) echo "近畿 和歌山市" ;;
 
-  # 四国
-  region["徳島県"]="四国"; capital["徳島県"]="徳島市"
-  region["香川県"]="四国"; capital["香川県"]="高松市"
-  region["愛媛県"]="四国"; capital["愛媛県"]="松山市"
-  region["高知県"]="四国"; capital["高知県"]="高知市"
+  鳥取県) echo "中国 鳥取市" ;;
+  島根県) echo "中国 松江市" ;;
+  岡山県) echo "中国 岡山市" ;;
+  広島県) echo "中国 広島市" ;;
+  山口県) echo "中国 山口市" ;;
 
-  # 九州・沖縄
-  region["福岡県"]="九州"; capital["福岡県"]="福岡市"
-  region["佐賀県"]="九州"; capital["佐賀県"]="佐賀市"
-  region["長崎県"]="九州"; capital["長崎県"]="長崎市"
-  region["熊本県"]="九州"; capital["熊本県"]="熊本市"
-  region["大分県"]="九州"; capital["大分県"]="大分市"
-  region["宮崎県"]="九州"; capital["宮崎県"]="宮崎市"
-  region["鹿児島県"]="九州"; capital["鹿児島県"]="鹿児島市"
-  region["沖縄県"]="沖縄"; capital["沖縄県"]="那覇市"
-}
-{
-  if ($1 in region) {
-    print region[$1], capital[$1]
-  } else {
-    print "Unknown prefecture:", $1 > "/dev/stderr"
-    exit 1
-  }
-}
-'
+  徳島県) echo "四国 徳島市" ;;
+  香川県) echo "四国 高松市" ;;
+  愛媛県) echo "四国 松山市" ;;
+  高知県) echo "四国 高知市" ;;
+
+  福岡県) echo "九州 福岡市" ;;
+  佐賀県) echo "九州 佐賀市" ;;
+  長崎県) echo "九州 長崎市" ;;
+  熊本県) echo "九州 熊本市" ;;
+  大分県) echo "九州 大分市" ;;
+  宮崎県) echo "九州 宮崎市" ;;
+  鹿児島県) echo "九州 鹿児島市" ;;
+  沖縄県) echo "九州 那覇市" ;;
+
+  *)
+    echo "Unknown prefecture: $pref" >&2
+    exit 1 ;;
+esac
 
