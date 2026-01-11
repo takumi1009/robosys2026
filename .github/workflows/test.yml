@@ -22,8 +22,8 @@ jobs:
         run: python --version
 
       - name: Make scripts executable
-        run: chmod +x prefecture_checker test/test.sh
+        run: chmod +x prefecture_checker test.bash
 
       - name: Run tests
-        run: ./test.sh
+        run: ./test.bash
 
