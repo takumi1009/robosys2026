@@ -14,7 +14,7 @@ echo "===== Test 3: 北海道 ====="
 echo "北海道" | ./prefecture_checker
 
 echo "===== Test 4: 架空県 ====="
-echo "架空県" | ./prefecture_checker || echo "Correctly rejected"
+! echo "架空県" | ./prefecture_checker
 
 echo "===== End ====="
 
